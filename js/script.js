@@ -73,3 +73,18 @@ for(let value of membriTeam) {
         console.log(key + ': ' + value[key]);
     }
 }
+
+// MILESTONE 2: Stampare le stesse informazioni su DOM sottoforma di stringhe
+
+const rowHTML = document.querySelector('.row');
+
+for(let value of membriTeam) {
+    const card = document.createElement('div');
+    card.className = 'col-lg-4 g-4';
+    for(let key in value) {
+        const cardMembro = document.createElement('div');
+        cardMembro.innerHTML += ' ' + key + ': ' + value[key]; 
+        rowHTML.append(card);
+        card.append(cardMembro);
+    }
+}
