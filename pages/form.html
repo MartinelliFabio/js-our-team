@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Our Team</title>
+</head>
+<body>
+
+<div class="vh-100">
+    <header class="d-flex">
+        <div class="container d-flex align-items-center">
+            <a href="../index.html" class="text-decoration-none"><h2 class="fw-bold fs-1">Boolean</h2></a>
+        </div>
+    </header>
+    
+    <main>
+    <!-- Div contenente il form -->
+    <div class="container text-center container-form d-flex flex-column text-white mt-5">
+        <h1 class="mt-4">Inserisci i tuoi dati</h1>
+        <div class="form flex-column d-flex">
+            <div class="text-start fw-bold">Nome</div>
+            <input type="text" required class="mb-2 name">
+            <div class="text-start fw-bold">Ruolo</div>
+            <input type="text" required class="mb-2 role">
+            <div class="text-start fw-bold">Immagine</div>
+            <input type="file" required name="img" accept="image/*" class="mb-2 img">
+            <button class="fw-bold text-uppercase mt-2" id="carica-form">Carica Dati</button>
+        </div>
+    </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="d-flex justify-content-center align-items-center">
+        <span class="fw-bold">Made By <a href="https://github.com/MartinelliFabio">Fabio Martinelli</a> - Boolean</span>
+    </footer>
+
+</div>
+
+<script src="../js/libreria.js"></script>
+<script src="../js/form.js"></script>
+
+</body>
+</html>

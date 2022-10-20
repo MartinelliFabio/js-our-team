@@ -1,14 +1,86 @@
+/* ! Utility */
 :root {
     --black: #000000;
     --white: #ffffff;
+    --blue: #5fa8d3;
+    --white-blue: #cae9ff;
+    --dark-blue: #1b4965;
+    --light-blue: #62b6cb;
+    --light-green: #bee9e8;
 }
 
+body {
+    background-color: var(--white-blue);
+}
+
+/* ! Stile dell'Header Footer e Main */
 header, footer {
-    background-color: var(--black);
+    background-color: var(--white);
     height: 80px;
 }
 
 main {
     height: calc(100vh - 160px);
     overflow-y: auto;
+    color: var(--dark-blue);
+}
+
+/* ! Stile dell'ancora sull'header */
+header a {
+    color: var(--dark-blue);
+}
+
+.my-text-white-blue {
+    color: var(--white-blue);
+}
+
+/* ! Main */
+.form-card {
+    background-color: var(--dark-blue);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.card-member {
+    cursor: pointer;
+    color: var(--white);
+}
+
+/* ! Footer */
+footer a {
+    color: var(--dark-blue);
+}
+
+/* ! Hover dei vari elementi */
+header a:hover {
+    color: var(--blue);
+    transition: 0.5s;
+}
+
+.card-member:hover {
+    opacity: 80%;
+    transition: 0.5s;
+}
+
+img:hover {
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+footer a:hover {
+    color: var(--blue);
+    transition: 0.5s;
+}
+
+/* ! Form */
+.container-form {
+    width: 850px;
+    height: 450px;
+    background-color: var(--dark-blue);
+    border-radius: 15px;
+}
+
+.form {
+    margin: 0 auto;
+    padding-top: 40px;
 }

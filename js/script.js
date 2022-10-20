@@ -1,5 +1,3 @@
-"use strict";
-
 /*  -----------------------------------------------------------------------------------------------
     Utilizzando i dati forniti, creare un array di oggetti per rappresentare i membri del team.
     Ogni membro è caratterizzato dalle seguenti informazioni: nome, ruolo e foto.
@@ -25,41 +23,6 @@
 
 
 
-// MILESTONE 0: Creare l’array di oggetti con le informazioni fornite.
-
-// Creo la variabile oggetto membriTeam con varie proprietà e i loro rispettivi valori
-const membriTeam = [
-    {
-        'Name': 'Wayne Barnett',
-        'Role': 'Founder & CEO',
-        'Image': 'wayne-barnett-founder-ceo.jpg'
-    },
-    {
-        'Name': 'Angela Caroll',
-        'Role': 'Chief Editor',
-        'Image': 'angela-caroll-chief-editor.jpg'
-    },
-    {
-        'Name': 'Walter Gordon',
-        'Role': 'Office Manager',
-        'Image': 'walter-gordon-office-manager.jpg'
-    },
-    {
-        'Name': 'Angela Lopez',
-        'Role': 'Social Media Manager',
-        'Image': 'angela-lopez-social-media-manager.jpg'
-    },
-    {
-        'Name': 'Scott Estrada',
-        'Role': 'Developer',
-        'Image': 'scott-estrada-developer.jpg'
-    },
-    {
-        'Name': 'Barbara Ramos',
-        'Role': 'Graphic Designer',
-        'Image': 'barbara-ramos-graphic-designer.jpg'
-    },
-];
 
 // MILESTONE 1: Stampare su console le informazioni di nome, ruolo e la stringa della foto
 
@@ -75,25 +38,45 @@ for(let value of membriTeam) {
 }
 
 // MILESTONE 2: Stampare le stesse informazioni su DOM sottoforma di stringhe
-// BONUS 1: Trasformare la stringa foto in una immagine effettiva
+// BONUS 1: Trasformare la stringa foto in una immagine effettiva21
 // BONUS 2: Organizzare i singoli membri in card/schede e stilarli a vostro gusto 
 
 const rowHTML = document.querySelector('.row');
 
-for(let value of membriTeam) {
-    const card = document.createElement('div');
-    card.className = 'col-lg-4 g-4';
-    for(let key in value) {
-        const cardMembro = document.createElement('div');
-        if(key == 'Name') {
-            cardMembro.innerHTML = value[key]; 
-        } else if(key == 'Role') {
-            cardMembro.innerHTML = value[key]; 
-        } else if(key == 'Image') {
-            cardMembro.innerHTML = '<img src="./img/' + value[key] + '">'; 
+function ourTeam () {
+    const inputUtente = JSON.parse(localStorage.getItem('inputUtente'));
+    membriTeam.push(inputUtente);
+    console.log(inputUtente); 
+    for(let value of membriTeam) {
+        const card = document.createElement('div');
+        card.className = 'col-4 g-4 fw-bold d-flex flex-column-reverse';
+        for(let key in value) {
+            const cardMembro = document.createElement('div');
+            if(key == 'Name') {
+                cardMembro.innerHTML = value[key];
+                cardMembro.className = 'fs-4 card-member';  
+            } else if(key == 'Role') {
+                cardMembro.innerHTML = value[key];
+                cardMembro.className = 'my-text-white-blue';  
+            } else if(key == 'Image') {
+                    cardMembro.className = 'card-member';  
+                    cardMembro.innerHTML = '<img src="./img/' + value[key] + '">';                     
+            }
+            rowHTML.append(card);
+            card.append(cardMembro);
         }
-        rowHTML.append(card);
-        card.append(cardMembro);
-        
-    }
+    }  
 }
+ourTeam();
+
+const btnToFormHTML = document.getElementById('btn-to-form');
+
+function toForm() {
+    localStorage.setItem('cardMembri', JSON.stringify(membriTeam)); 
+    window.location.href = "./pages/form.html";
+}
+btnToFormHTML.addEventListener('click', () => {
+    toForm();
+});
+
+console.log(membriTeam);
