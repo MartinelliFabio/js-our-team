@@ -23,35 +23,53 @@
     Aggiungere attraverso un form un membro al team
 --------------------------------------------------------------------------------------------------- */
 
+
+
+// MILESTONE 0: Creare l’array di oggetti con le informazioni fornite.
+
+// Creo la variabile oggetto membriTeam con varie proprietà e i loro rispettivi valori
 const membriTeam = [
     {
-        'name': 'Wayne Barnett',
-        'role': 'Founder & CEO',
-        'image': 'wayne-barnett-founder-ceo.jpg'
+        'Name': 'Wayne Barnett',
+        'Role': 'Founder & CEO',
+        'Image': 'wayne-barnett-founder-ceo.jpg'
     },
     {
-        'name': 'Angela Caroll',
-        'role': 'Chief Editor',
-        'image': 'angela-caroll-chief-editor.jpg'
+        'Name': 'Angela Caroll',
+        'Role': 'Chief Editor',
+        'Image': 'angela-caroll-chief-editor.jpg'
     },
     {
-        'name': 'Walter Gordon',
-        'role': 'Office Manager',
-        'image': 'walter-gordon-office-manager.jpg'
+        'Name': 'Walter Gordon',
+        'Role': 'Office Manager',
+        'Image': 'walter-gordon-office-manager.jpg'
     },
     {
-        'name': 'Angela Lopez',
-        'role': 'Social Media Manager',
-        'image': 'angela-lopez-social-media-manager.jpg'
+        'Name': 'Angela Lopez',
+        'Role': 'Social Media Manager',
+        'Image': 'angela-lopez-social-media-manager.jpg'
     },
     {
-        'name': 'Scott Estrada',
-        'role': 'Developer',
-        'image': 'scott-estrada-developer.jpg'
+        'Name': 'Scott Estrada',
+        'Role': 'Developer',
+        'Image': 'scott-estrada-developer.jpg'
     },
     {
-        'name': 'Barbara Ramos',
-        'role': 'Graphic Designer',
-        'image': 'barbara-ramos-graphic-designer.jpg'
+        'Name': 'Barbara Ramos',
+        'Role': 'Graphic Designer',
+        'Image': 'barbara-ramos-graphic-designer.jpg'
     },
 ];
+
+// MILESTONE 1: Stampare su console le informazioni di nome, ruolo e la stringa della foto
+
+// Creato due cicli for per vedere la funzione di tutti e due
+for(let i = 0; i < membriTeam.length; i++) {
+    console.log('Nome: ' + membriTeam[i].Name + ' Ruolo: ' + membriTeam[i].Role + ' Immagine: ' + membriTeam[i].Image);
+}
+
+for(let value of membriTeam) {
+    for(let key in value) {
+        console.log(key + ': ' + value[key]);
+    }
+}
