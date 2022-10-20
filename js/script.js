@@ -75,6 +75,8 @@ for(let value of membriTeam) {
 }
 
 // MILESTONE 2: Stampare le stesse informazioni su DOM sottoforma di stringhe
+// BONUS 1: Trasformare la stringa foto in una immagine effettiva
+// BONUS 2: Organizzare i singoli membri in card/schede e stilarli a vostro gusto 
 
 const rowHTML = document.querySelector('.row');
 
@@ -83,8 +85,15 @@ for(let value of membriTeam) {
     card.className = 'col-lg-4 g-4';
     for(let key in value) {
         const cardMembro = document.createElement('div');
-        cardMembro.innerHTML += ' ' + key + ': ' + value[key]; 
+        if(key == 'Name') {
+            cardMembro.innerHTML = value[key]; 
+        } else if(key == 'Role') {
+            cardMembro.innerHTML = value[key]; 
+        } else if(key == 'Image') {
+            cardMembro.innerHTML = '<img src="./img/' + value[key] + '">'; 
+        }
         rowHTML.append(card);
         card.append(cardMembro);
+        
     }
 }

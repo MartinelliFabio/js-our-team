@@ -1,0 +1,14 @@
+:root {
+    --black: #000000;
+    --white: #ffffff;
+}
+
+header, footer {
+    background-color: var(--black);
+    height: 80px;
+}
+
+main {
+    height: calc(100vh - 160px);
+    overflow-y: auto;
+}
