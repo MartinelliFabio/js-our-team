@@ -66,13 +66,13 @@ function ourTeam () {
             card.append(cardMembro);
         }
     }  
+    localStorage.setItem('cardMembri', JSON.stringify(membriTeam)); 
 }
 ourTeam();
 
 const btnToFormHTML = document.getElementById('btn-to-form');
 
 function toForm() {
-    localStorage.setItem('cardMembri', JSON.stringify(membriTeam)); 
     window.location.href = "./pages/form.html";
 }
 btnToFormHTML.addEventListener('click', () => {
